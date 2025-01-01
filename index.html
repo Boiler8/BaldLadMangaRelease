@@ -1,0 +1,50 @@
+<html>
+    <header>
+        <title>Bald Manga Release</title>
+        <link rel="stylesheet" type="text/css" href="BaldLad.css">
+    </header>
+    <h1>
+        Is Bald Lad Manga Out Yet?
+    </h1>
+
+    <div class="body">
+        <p>Is Bald Lad Manga out yet?</p>
+        <p>Click Here to Find Out!</p>
+        <button id="revealButton" onclick="RevealResults"><p>Here</p></button>
+        <div id="hiddenContent" class="result">
+            <div id="dateTime"></div>
+            <h2>No, BaldLad Manga is not out yet </h2>
+            <img src="Images/SadEmoji.jpg" alt="Manga not out :(" width="500" height="500">
+        </div>
+    </div>
+</html>
+
+<script>
+    // Get the button and hidden content elements
+    const button = document.getElementById('revealButton');
+    const hiddenContent = document.getElementById('hiddenContent');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', () => {
+      // Toggle the display property
+      if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'block'; // Show the content
+        button.textContent = 'Hide Content'; // Change button text
+      } else {
+        hiddenContent.style.display = 'none'; // Hide the content
+        button.textContent = 'Show Content'; // Change button text
+      }
+    });
+
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeString = now.toLocaleString(); // Format date and time as per locale
+        document.getElementById('dateTime').textContent = dateTimeString;
+      }
+  
+      // Update the date and time immediately
+      updateDateTime();
+  
+      // Update the date and time every second
+      setInterval(updateDateTime, 1000);
+  </script>
